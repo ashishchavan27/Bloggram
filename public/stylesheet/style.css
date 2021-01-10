@@ -34,10 +34,8 @@ body{
 .blogger{
     font-size: 6.5rem;
     color: #007bffc7;;
-    margin-top: 16%;
     font-family: 'Merriweather', serif;
-    margin-left: -57%;
-    margin-right: -57%;
+    
 }
 
 .bg-img {
@@ -85,6 +83,15 @@ body{
 .centered{
     text-align: center;
 }
+.create-form {
+    max-width: 90%;
+    margin: auto;
+    display: block;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+    padding: 5%;
+    font-size: 1.6rem;
+    font-family: 'Merriweather', serif;
+}
 .footer{
     text-align: center ;
     background-color: white;
@@ -112,8 +119,6 @@ form{
 }
 html {
     position: relative;
-    min-width: 1024px;
-    min-height: 768px;
     height: 100%;
     margin: 0;
     font: 400 15px/1.8 "Lato", sans-serif;
@@ -132,8 +137,7 @@ button:hover, a:hover {
     text-align: center;
 }
 .login-form {
-    width: 30rem;
-    max-width: 90%;
+    max-width: 80%;
     margin: auto;
     display: block;
     box-shadow: 0 2px 8px rgb(0 0 0 / 50%);

@@ -3,15 +3,19 @@
 
 <body style="    background-color: var(--light);">
     <%- messages()%>
-    <div>
-        <h2 style="text-align: center;
-        margin: 0 20px 20px;
-        font-family: 'Merriweather', serif;
-        font-size: 4rem;
-        margin-top: 5%;
-    color: #007bffc7;"><%=post.title%></h2>
-
-    </div>        
+    
+    <div class="container-fluid">     
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                <h1 class="heading" >
+                    <%=post.title%>
+                    
+                </h1>
+            </div>
+        </div>
+      </div>
+    </div>
+         
     <hr>
     <!-- <img src="/images/<%=post.mainimage%>" alt="John Doe" class="rounded" style="width:400px;margin: 0 37%;"> -->
     

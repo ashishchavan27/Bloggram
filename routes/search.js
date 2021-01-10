@@ -15,7 +15,6 @@ router.get('/user/:search', function(req, res, next) {
         {'name':{'$regex':search, '$options':'i'}},
         {'username':{'$regex':search, '$options':'i'}}]
     })
-    .limit(4)
     .then(Users => {
         AllUsers=Users;
         users.find({email: req.session.email})

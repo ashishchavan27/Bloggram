@@ -3,14 +3,21 @@
 
 <body style="    background-color: var(--light);">
     <%- messages()%>
-    <h1 class="heading" >
-        <% if(follow!==3    ){ %>
-            <% if(userblog){ %> <%=name%>'s Blogs<%}else{%> <%=heading%><%}%>
-        <%}else{%>
-            Your Profile
-        <%}%>
-    </h1>
-
+    
+    <div class="container-fluid">     
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 ">
+                <h1 class="heading" >
+                    <% if(follow!==3    ){ %>
+                        <% if(userblog){ %> <%=name%>'s Blogs<%}else{%> <%=heading%><%}%>
+                    <%}else{%>
+                        Your Profile
+                    <%}%>
+                </h1>
+            </div>
+        </div>
+      </div>
+    </div>
     <% if(follow!==0    ){ %>
     <div class=" blog" style="padding: 3%;">
         <br>
@@ -61,62 +68,59 @@
         <% } %>
         <% } %> 
 
-        <% if(followed){ %>        
-        <div class="media border p-3 blog" >
-            <img src="/<%= posts[i].imageUrl %>" alt="Post Image" class="mr-3 mt-3 rounded" style="width:250px;margin-left: 2%;">
-            <div class="media-body " style="margin: 1.5% 5%;">
-                
-                <h2>
-                    <a href="/read/<%=posts[i]._id%>" style="color: #1e252c">
-                        <strong  style="
-                        font-family: 'Merriweather', serif;">
-                            <%=posts[i].title%>
-                        </strong>
-                    </a> 
-                </h2>
-                
-                <small>
-                    <hr>
-                    <h6 ><i>Posted in 
-                        <a href="/categories/findCategory/<%=posts[i].category%>" class="sorting-links" ><strong><%=posts[i].category%></strong></a> 
-                    by  <a href="/categories/findAuthor/<%=posts[i].author%>" class="sorting-links"><strong><%=posts[i].author%></strong></a> 
-                    on  <%=moment(posts[i].date).format("MM-DD-YYYY")%>
-                    </i></h6>
-                </small>
-                <hr>
-                
-                <% if(posts[i].body.length>=300){ %> 
-                    <h5><%- posts[i].body.substring(0, 300) %>...</h5>
-                    <br>
-                    <a class="sorting-links" style="font-weight: bold;font-family: 'Merriweather', serif; " href="/read/<%=posts[i]._id%>">Read more</a>    
-                <% }else{ %>
-                   <h5><%- posts[i].body%></h5>
-                <% }  %>
-                <hr>
-                <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=posts[i].likes.length%>     <a href="/read/<%=posts[i]._id%>" ">    Comments: <%=posts[i].comments.length%></a></h5>
-                <hr>
-                
-                
-                <% var isLiked=false %>
-                <% for(var j=0;j< posts[i].likes.length ;j++) { %>
-                    <% if(posts[i].likes[j].name=== name){ %> 
-                        <% isLiked=true %>
-                    <% } %>
-                <% } %>
-            
-
-                <% if(!isLiked){ %> 
-                    <button class="btn btn-primary"  value="save" type="submit">
-                        <a style="color: white;text-decoration: none;" href="/posts/like/<%=posts[i]._id%>">Like</a> 
-                    </button>
-                <% }else{ %>
-                    <button class="btn btn-danger"  value="save" type="submit">
-                        <a style="color: white;text-decoration: none;" href="/posts/unlike/<%=posts[i]._id%>">Unlike</a> 
-                    </button>
-                <%}%>
-                
-            </div>
-        </div>
+        <% if(followed){ %>
+            <div class="container-fluid"> 
+                <div class="media border p-3 blog row" style="margin: 3% 15%;">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 ">
+                        <img src="/<%= posts[i].imageUrl %>" alt="Post Image" class="mr-3 mt-3 rounded" style="width:100%;">
+                        <hr>
+                    </div>
+                    <div class="media-body col-12 col-sm-12 col-md-8 col-lg-8" style="margin: 1.5% 1%;">
+                        <h2>
+                            <a href="/read/<%=posts[i]._id%>" style="color: #1e252c">
+                                <strong  style="
+                                font-family: 'Merriweather', serif;">
+                                    <%=posts[i].title%>
+                                </strong>
+                            </a> 
+                        </h2>
+                       <small>
+                            <hr>
+                            <h6 ><i>Posted in 
+                                <a href="/categories/findCategory/<%=posts[i].category%>" class="sorting-links" ><strong><%=posts[i].category%></strong></a> 
+                            by  <a href="/categories/findAuthor/<%=posts[i].author%>" class="sorting-links"><strong><%=posts[i].author%></strong></a> 
+                            on  <%=moment(posts[i].date).format("MM-DD-YYYY")%>
+                            </i></h6>
+                        </small>
+                        <hr>
+                        <% if(posts[i].body.length>=300){ %> 
+                            <h5><%- posts[i].body.substring(0, 300) %>...</h5>
+                            <br>
+                            <a class="sorting-links" style="font-weight: bold;font-family: 'Merriweather', serif; " href="/read/<%=posts[i]._id%>">Read more</a>    
+                        <% }else{ %>
+                           <h5><%- posts[i].body%></h5>
+                        <% }  %>
+                        <hr>
+                        <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=posts[i].likes.length%>     <a href="/read/<%=posts[i]._id%>" ">    Comments: <%=posts[i].comments.length%></a></h5>
+                        <hr>
+                        <% var isLiked=false %>
+                        <% for(var j=0;j< posts[i].likes.length ;j++) { %>
+                            <% if(posts[i].likes[j].name=== name){ %> 
+                                <% isLiked=true %>
+                            <% } %>
+                        <% } %>
+                        <% if(!isLiked){ %> 
+                            <button class="btn btn-primary"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/posts/like/<%=posts[i]._id%>">Like</a> 
+                            </button>
+                        <% }else{ %>
+                            <button class="btn btn-danger"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/posts/unlike/<%=posts[i]._id%>">Unlike</a> 
+                            </button>
+                        <%}%>
+                    </div>
+                </div>
+            </div>        
         <% } %>
     <% } %>
 </body>
