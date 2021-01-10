@@ -1,6 +1,5 @@
 
-server.cert
-server.key
+
 nodemon.json
 .env
 credentials.json
