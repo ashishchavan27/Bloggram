@@ -1,0 +1,251 @@
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    text-align: center;
+}
+a{
+    color: #343a40;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+body{
+    padding-top: 50px;
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+    /* background-color:#96b7ff; */
+    /* background-image: url("bg6.jpg"); */
+}
+.blog{
+    margin: 3% 15%;
+    border: solid 1px white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);   
+    background-color:white;
+}
+.btn{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+    letter-spacing: 1px;
+}
+.blogger{
+    font-size: 6.5rem;
+    color: #007bffc7;;
+    margin-top: 16%;
+    font-family: 'Merriweather', serif;
+    margin-left: -57%;
+    margin-right: -57%;
+}
+
+.bg-img {
+    /* background-image: url("bg5.jpg"); */
+    padding: 10% 25%;
+    min-height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    position: relative;
+    opacity: 1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.bgimg-1 {
+    background-image: url("bg9.jpg");
+    height: 100%;
+
+}
+.bgimg-2 {
+    background-image: url("bg10.png");
+    height: 100%;
+}
+.caption {
+    position: absolute;
+    left: 0;
+    top: 33%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border {
+    color: black;
+    padding: 18px;
+    font-size: 35px;
+    letter-spacing: 5px;
+    
+}
+.centered{
+    text-align: center;
+}
+.footer{
+    text-align: center ;
+    background-color: white;
+    color: var(--dark);
+}
+form{
+   
+    margin: 5% 30%;
+    padding: 2% 2%;
+    border-radius: 10px;
+    text-align: -webkit-match-parent;
+}
+.form-inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    margin: 0 32%;
+    align-items: center;
+    padding: 1px;
+}
+.form-control{
+    width: auto;
+}
+html {
+    position: relative;
+    min-width: 1024px;
+    min-height: 768px;
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+    /* background-color: #96b7ff; */
+    
+}
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 3% auto;
+    text-align: center;
+}
+.login-form {
+    width: 30rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+    padding: 5%;
+    font-size: 1.6rem;
+    font-family: 'Merriweather', serif;
+}
+/* Control the left side */
+.left {
+    left: 0;
+    
+}
+  
+  
+.nav-item{
+    margin: 4px;
+    font-size: 21px;
+    text-align: center;
+}
+.nav-right{
+    
+    float: right;
+    padding: 6px;
+    border: 1px solid var(--gray-dark);
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 6px;
+}
+
+.heading{
+    text-align: center;
+    margin: 5% 20px 20px;
+    font-family: 'Merriweather', serif;
+    font-size: 5rem;
+    color: #007bffc7;
+}
+p{
+    font-size: 1.2rem;    
+}
+/* Control the right side */
+.right {
+    right: 0;
+    
+}
+.sorting-links{
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.searchBar , .searchBar:hover{
+    background: #fff;
+    display: flex;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+    height: 39px;
+    width: 690px;
+    border-radius: 24px;
+    z-index: 3;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: white;
+}
+  
+  
+ul.success li{
+    padding: 15px;
+    border: 1px solid #6ecd70;
+    border-radius: 4px;
+    color: #004610;
+    background-color: #28a74540;
+    border-color: #d6e9c6;
+    list-style: none;
+    text-align: center;
+    margin-right: 4%;
+    position: relative;
+    left: 5%;
+    margin-top: 3%;
+    width: 90%;
+    font-size: 1.6rem;
+}
+ul.failure li{
+    padding: 15px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    color: #630009;
+    background-color: #eb576575;
+    border-color: #d6e9c6;
+    list-style: none;
+    text-align: center;
+    margin-right: 4%;
+    position: relative;
+    left: 5%;
+    margin-top: 3%;
+    width: 90%;
+    font-size: 1.6rem;
+}
+
+
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+  

@@ -1,0 +1,37 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+
+<body style="    background-color: var(--light);">
+    <%- messages()%>
+    <h1 class="heading" style="font-size: 5rem;margin-top: 5%;" >
+        Update profile
+    </h1>
+    <form class="card" style="background-color:  #f8f9fa;" action="/update/:<%=user.name%>"  method="POST" enctype="multipart/form-data" >
+        <!-- <%- messages()%> -->
+        
+        <div class="form-group" style="display: flex;" >
+            <label for="name"> Name: </label>
+            <input disabled style="    margin: 0 3%;" class="form-control" type="text" name="name" value="<%= user.name%>">
+        </div>
+        <br>
+        
+        <div class="form-group" style="display: flex;">
+            <label for="email">Email*:</label>
+            <input disabled style="    margin: 0 3%;" class="form-control" type="email" name="email" value="<%= user.email %>">
+        </div>
+        <div class="form-group" style="display: flex;">
+            <label for="image">Profile pic:</label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              style="margin: 0 3%;font-size: medium;padding: 1%;"
+            />
+        </div>
+        <hr>
+        <button  class="btn btn-default btn-primary" name="submit" type="submit" value="save">Save</button>
+    </form>
+</body>
+
+<%- include('./includes/footer.ejs') %>
+        

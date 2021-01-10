@@ -1,0 +1,27 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+<main>
+    <body style=" background-color: var(--light);">
+        <%- messages()%>
+        <h1 class="heading" style="font-size: 4rem;margin-top: 5%;">
+            ADD CUSTOM CATEGORY
+        </h1>
+        <form class="login-form" style="background-color: #f8f9fa;width:50%;padding: 3%;margin: 3% 25% 5%;" action="/categories/add"  method="POST">
+            
+            <%if(errors){for(var i=0; i < errors.length; i++) {%>
+                <ul class="alert " style="color: var(--light);
+                background-color: #8b4614b8;
+                border-color: #ab6e2c;text-align: center;">
+                    <%=errors[i].msg%>
+                </ul>
+            <% }} %>
+            <div class="form-group">
+                <label for="name">Category Name*:</label>
+                <input class="form-control" type="text" name="name">
+            </div>
+            <button  class="btn btn-default btn-primary" name="submit" type="submit" value="save">Save</button>
+    
+        </form>
+    
+    <%- include('./includes/footer.ejs') %>
+</main>

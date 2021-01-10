@@ -1,0 +1,83 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+
+
+<body style="background-color: var(--light);">  
+    <div class=" card" style="padding: 3% 0%;">
+        <% if(editing){%>
+            <h2 style="margin: 0%;">
+                <a href="/categories/findAuthor/<%=author.name%>"><%=author.name%></a> 
+            </h2>
+            <hr>
+            <p class="title" style="color: grey;font-size: 18px;    margin: 0;"> Followers : <%= author.followers.length%></p>
+            <hr>
+            <% for(var i=author.followers.length-1; i >= 0; i--) { %>
+                <div >
+                    <% if(user.name!== author.followers[i].name){ %> 
+                    <h4  style="margin: 0%;"><a href="/categories/findAuthor/<%=author.followers[i].name%>"><%=author.followers[i].name%></a>
+                        
+                        <% var followed=false %>
+                        <% for(var j=0;j< user.following.length ;j++) { %>
+                            <% if(user.following[j].name=== author.followers[i].name){ %> 
+                                <% followed=true %>
+                            <% } %>
+                        <% } %>
+                        <% if(!followed){ %> 
+                            <button class="btn btn-primary"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/follow/<%=author.followers[i].name%>">Follow</a> 
+                            </button>
+                        <%}else{%>
+                            <button class="btn btn-danger"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/unfollow/<%=author.followers[i].name%>">Unfollow</a> 
+                            </button>
+                        <%}%>
+                        
+                    </h4>
+                    <%}else{%>
+                        <h4><a href="/categories/findAuthor/<%=user.name%>">You</a></h4>
+                    <%}%>
+                </div>
+                <hr>
+            <% } %>
+        <% }else{ %>
+            <h2  style="margin: 0%;">
+                <a href="/categories/findAuthor/<%=author.name%>"><%=author.name%></a> 
+            </h2>
+            <hr>
+            <p class="title" style="color: grey;font-size: 18px;    margin: 0;"> Following : <%= author.following.length%></p>
+            
+            <% for(var i=author.following.length-1; i >= 0; i--) { %>
+                <div ><hr>
+                    <% if(user.name!== author.following[i].name){ %> 
+                    <h4  style="margin: 0%;"><a href="/categories/findAuthor/<%=author.following[i].name%>"><%=author.following[i].name%></a>
+                        
+                        <% var followed=false %>
+                        <% for(var j=0;j< user.following.length ;j++) { %>
+                            <% if(user.following[j].name=== author.following[i].name){ %> 
+                                <% followed=true %>
+                            <% } %>
+                        <% } %>
+                        <% if(!followed){ %> 
+                            <button class="btn btn-primary"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/follow/<%=author.following[i].name%>">Follow</a> 
+                            </button>
+                        <%}else{%>
+                            <button class="btn btn-danger"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/unfollow/<%=author.following[i].name%>">Unfollow</a> 
+                            </button>
+                        <%}%>
+                        
+                    </h4>
+                    <%}else{%>
+                        <h4><a href="/categories/findAuthor/<%=user.name%>">You</a></h4>
+                    <%}%>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+
+<%- include('./includes/footer.ejs') %>
+
+
+  

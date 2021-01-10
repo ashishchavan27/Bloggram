@@ -1,0 +1,113 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+
+<body style="    background-color: var(--light);">
+    <%- messages()%>
+    <div>
+        <h2 style="text-align: center;
+        margin: 0 20px 20px;
+        font-family: 'Merriweather', serif;
+        font-size: 4rem;
+        margin-top: 5%;
+    color: #007bffc7;"><%=post.title%></h2>
+
+    </div>        
+    <hr>
+    <!-- <img src="/images/<%=post.mainimage%>" alt="John Doe" class="rounded" style="width:400px;margin: 0 37%;"> -->
+    
+    <div class="media border p-3 blog" style="margin: 2% 20%;">
+        
+        <div class="media-body " style="padding: 1% 4%;">
+            
+                <i>Posted in <a href="/categories/findCategory/<%=post.category%>" ><strong><%=post.category%></strong></a> 
+                    by <a href="/categories/findAuthor/<%=post.author%>"><strong><%=post.author%></strong></a> 
+                    on  <%=moment(post.date).format("MM-DD-YYYY")%>
+                </i>
+                <hr>
+                <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=post.likes.length%>     <a href="/read/<%=post._id%>" ">    Comments: <%=post.comments.length%></a></h5>
+            <hr>
+            
+            <img src="/<%=post.imageUrl%>" alt="<%= post.title %>" class="rounded" style="width:50%;margin: 3% 25%;    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);">
+            <hr>
+            <p><%- post.body%></p>
+            <% var isLiked=false %>
+            <% for(var j=0;j< post.likes.length ;j++) { %>
+                <% if(post.likes[j].name=== name){ %> 
+                    <% isLiked=true %>
+                <% } %>
+            <% } %> 
+            <div class="centered">
+                <hr>
+                <% if (isAuthenticated) { %>
+                   
+                
+                <% if(!isLiked){ %> 
+                    <button class="btn btn-primary"  value="save" type="submit">
+                        <a style="color: white;text-decoration: none;" href="/posts/like/<%=post._id%>">Like</a> 
+                    </button>
+                <% }else{ %>
+                    <button class="btn btn-danger"  value="save" type="submit">
+                        <a style="color: white;text-decoration: none;" href="/posts/unlike/<%=post._id%>">Unlike</a> 
+                    </button>
+                <%}%>
+                <%}%>
+            </div>   
+        </div>
+    </div>
+    <br>
+    <hr>
+    <%if(post.comments.length>0){%>
+    
+        <h3 style="text-align: center;font-family: 'Merriweather', serif;">Comments</h3>
+        
+        <%for(var i=0; i < post.comments.length; i++) {%>
+            <div class="media border p-3 blog" style="margin: 2% 20%; ">
+                <div class="media-body " style="padding: 1% 4%;">
+                    <h2 style="font-weight: bold;" class="comment-name">
+                        <%=post.comments[i].name%>
+                    </h2>
+                    <h6 style="color: black;font-weight: bold;" class="comment-name"><%=moment(post.comments[i].commentdate).format("DD/MM/YY h:m")%></h6>
+                    
+                    <p class="comment-name"><%=post.comments[i].body%></p>
+                    <% if (userblog|| post.comments[i].email===reqEmail) { %>
+                        <form style="padding: 0;border: none; margin: 0;" method="POST" action="/posts/deletecomment/<%=post._id%>">
+                            <input type="hidden" name="postid" value="<%=post._id%>">
+                            <input type="hidden" name="commentname" value="<%=post.comments[i].name%>">
+                            <input type="hidden" name="commentemail" value="<%=post.comments[i].email%>">
+                            <input type="hidden" name="commentbody" value="<%=post.comments[i].body%>">
+                            <input type="hidden" name="commentdate" value="<%=post.comments[i].commentdate%>">
+                            <button class="btn btn-danger" type="submit" name="submit"value="save" >Delete Comment</button>
+                    
+                        </form>
+                    <% } %>
+                </div>
+                
+            </div>
+            
+        <% } %>
+        <br>
+    <% } %>    
+    
+    <% if (isAuthenticated) { %>
+        
+        
+        <h3 style="text-align: center;font-family: 'Merriweather', serif;">Add Comment</h3>
+    
+    <form class="login-form blog" style="margin: 2% 20%;padding: 2% 5%;width: 60%;border: white;" method="POST" action="/posts/addcomment">
+        <input type="hidden" name="postid" value="<%=post._id%>">
+        
+            <input type="hidden" name="name" class="form-control" value="<%= currentUser.name %>">  
+            <input type="hidden" name="email" class="form-control" value="<%= currentUser.email %>">     
+        <div class="form-group">
+            <label for="body">Comment :</label>
+            <textarea name="body" id="body" cols="30" rows="4" class="form-control"></textarea>
+                
+        </div>
+        <button type="submit" class="btn btn-primary" name="submit" value="Add Comment">Add Comment</button>
+    </form>
+    <% } %>
+
+</body>
+
+<%- include('./includes/footer.ejs') %>
+

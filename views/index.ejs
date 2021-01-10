@@ -1,0 +1,58 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+<body  style="background-color: var(--white);">
+    <!-- <%- messages()%> -->
+    <%- messages()%>
+    <!-- <div style="padding: 0% 15%;">
+        <div class="bgimg-1" style="height: 40rem;">
+
+        </div>
+        
+    </div> -->
+    <div class="row"    >
+        <div class="col-sm-4 bgimg-1" style="height: 30rem;margin-top:10%">
+            
+        </div>
+        <div class="col-sm-4" style="background-color: white;padding-top: 20px;text-align: center;z-index: 1;">  
+        
+            <div >
+                <div class="blogger" ><strong>BLOGGERS</strong> </div><br>
+                <div style="font-size: 32px;letter-spacing: 1px;color: #302927;font-family: 'Merriweather';">Grab a coffee and keep blogging!!</div><br><br>
+                <% if (isAuthenticated) { %>
+                <div  style="font-size: 32px;
+                font-weight: 800;
+                letter-spacing: 1px;
+                color: #007bffc7;
+                font-family: 'Merriweather';">Create your own <button class="btn btn-primary" style="background-color: #007bffc7;box-shadow: 0 2px 8px rgb(0 0 0 / 50%);border-color: #007bffc7;"><a href="/posts/add" style="text-decoration: none;color: white;font-size: xx-large;font-family: 'Merriweather';">Blog</a></button></div>
+                <% } else { %>
+                <div  style="font-size: 30px;
+                letter-spacing: 0px;">
+                    <button class="btn btn-primary"style="
+                    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+                    background-color: #007bffc7;
+                    border-color: #007bffc7;">
+                        <a href="/login" style="text-decoration: none;
+                        color: white;
+                        font-size: xx-large;font-family: 'Merriweather';">Login
+                        </a>
+                    </button> 
+                    to create your own blog 
+                </div>
+                <br>
+                <br>
+                <% } %>    
+            </div>
+        </div>
+        <div class="col-sm-4 bgimg-2" style="height: 30rem;margin-top:10%">
+            
+        </div>
+    </div>
+    
+      
+    
+    
+
+</body>
+
+<%- include('./includes/footer.ejs') %>
+

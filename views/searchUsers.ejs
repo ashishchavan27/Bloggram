@@ -1,0 +1,94 @@
+<%- include('./includes/head.ejs') %>
+<%- include('./includes/nav.ejs') %>
+
+<body class="container-fluid" style="background-color: var(--light);">  
+    <h1 class="heading container-fluid" >
+        <%=heading%>
+    </h1>
+    <% if(allUsers){%>
+    <h2 class="centered">USERS:</h2><hr>
+    <div class="row" style="margin: 2% 15%;">
+    <% for(var i=allUsers.length-1; i >= 0; i--) { %>  
+        
+            <div class="card  container-fluid" style="max-width: 22%;margin: 1.5%;display: inline-flex;padding: 0%;">
+               
+                <h2><a style="color: #6c757d;" href="/categories/findAuthor/<%=allUsers[i].name%>"><strong><%=allUsers[i].name%></strong></a>
+                </h2>
+                <p class="title" style="color: grey;font-size: 18px;">Followers: <a href="/followers/<%=allUsers[i].name%>"><%= allUsers[i].followers.length%></a></p>
+                <p class="title" style="color: grey;font-size: 18px;">Following: <a href="/following/<%=allUsers[i].name%>"><%= allUsers[i].following.length%></a></p>     
+                <% var isfollowed=false %>
+                <% var isUser=false %>
+                <% var check= allUsers[i].name %>
+                <% if(currentUser.name=== check){isUser=true} %> 
+                     
+        
+                    <% for(var j= currentUser.following.length-1; j >= 0; j--) { %>
+                        <% if(currentUser.following[j].name=== check){ %> 
+                            <% isfollowed=true %>
+                        <% } %>
+                    <% } %> 
+                 
+                 <% if(!isfollowed&&!isUser){%>
+                    <form action="/follow/<%=allUsers[i].name%>" method="GET" style="border: none;margin: 0%;padding: 0%;border-radius: 0%;">
+                        <button class="btn btn-primary" value="save" type="submit" style="width: 100%; border-radius: 0;">
+                            Follow 
+                        </button>    
+                    </form>
+                <% } %> 
+                <% if(isfollowed&&!isUser){ %>
+                    <form action="/unfollow/<%=allUsers[i].name%>" method="GET" style="border: none;margin: 0%;padding: 0%;border-radius: 0%;">
+                        <button class="btn btn-danger" value="save" type="submit" style="width: 100%; border-radius: 0;">
+                            Unfollow 
+                        </button>    
+                    </form>
+                <% } %> 
+            </div>
+            
+        
+    <% } %></div>
+    <% } %>
+    <hr> 
+    <% if(posts){%>
+
+    <h2 class="centered">POSTS</h2>
+    <% for(var i=posts.length-1; i >= 0; i--) { %>
+        <div class="media border p-3 blog" >
+            <img src="/<%= posts[i].imageUrl %>" alt="Post Image" class="mr-3 mt-3 rounded" style="width:250px;margin-left: 2%;">
+            <div class="media-body " style="margin: 1.5% 1%;">
+                <h2 >
+                    <a  href="/read/<%=posts[i]._id%>" style="color: #1e252c">
+                        <strong id="increaseView" style="
+                        font-family: 'Merriweather', serif;
+                        /* font-family: 'Roboto Slab', serif; */
+                        " >
+                            <%=posts[i].title%>
+                        </strong>
+                    </a> 
+                </h2>
+                <small>
+                    <hr>
+                    <h6 ><i>Posted in 
+                        <a href="/categories/findCategory/<%=posts[i].category%>" class="sorting-links" ><strong><%=posts[i].category%></strong></a> 
+                    by  <a href="/categories/findAuthor/<%=posts[i].author%>" class="sorting-links"><strong><%=posts[i].author%></strong></a> 
+                    on  <%=moment(posts[i].date).format("MM-DD-YYYY")%>
+                    </i></h6>
+                </small>
+                <hr>
+                <% if(posts[i].body.length>=300){ %> 
+                    <h5><%- posts[i].body.substring(0, 300) %>...</h5>
+                    <a class="sorting-links" style="font-weight: bold;font-family: 'Merriweather', serif; " href="/read/<%=posts[i]._id%>">Read more</a>    
+                <% }else{ %>
+                   <h5><%- posts[i].body%></h5>
+                <% }  %>
+                <hr>
+                <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=posts[i].likes.length%>     <a href="/read/<%=posts[i]._id%>" ">    Comments: <%=posts[i].comments.length%></a></h5>
+            </div>
+        </div>
+    <% } %>
+    <% } %>
+</body>
+
+<%- include('./includes/footer.ejs') %>
+
+
+  

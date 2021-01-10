@@ -1,0 +1,48 @@
+{
+  "name": "blogger",
+  "version": "1.0.0",
+  "main": "app.js",
+  "engines": {
+    "node": "14.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "start-server": "node app.js"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  },
+  "keywords": [],
+  "author": "Ashish Chavan",
+  "dependencies": {
+    "aws-sdk": "^2.821.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "connect-flash": "*",
+    "connect-mongodb-session": "^2.4.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^5.3.0",
+    "googleapis": "^39.2.0",
+    "helmet": "^4.3.1",
+    "moment": "*",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.17",
+    "monk": "git+https://github.com/vccabral/monk.git",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "nodemon": "^2.0.6",
+    "serve-favicon": "^2.5.0"
+  },
+  "bin": {
+    "blogger": "www.js"
+  },
+  "description": ""
+}
