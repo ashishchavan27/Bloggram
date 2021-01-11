@@ -61,7 +61,7 @@ body{
 
 }
 .bgimg-2 {
-    background-image: url("bg10.png");
+    background-image: url("bg10.jpg");
     height: 100%;
 }
 .caption {
@@ -82,6 +82,13 @@ body{
 }
 .centered{
     text-align: center;
+}
+.coffee{
+    margin-top: 10%;
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: #302927;
+    font-family: 'Merriweather';
 }
 .create-form {
     max-width: 90%;
@@ -144,6 +151,7 @@ button:hover, a:hover {
     padding: 5%;
     font-size: 1.6rem;
     font-family: 'Merriweather', serif;
+    margin-top: 8rem;
 }
 /* Control the left side */
 .left {

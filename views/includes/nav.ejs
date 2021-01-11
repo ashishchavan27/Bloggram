@@ -1,5 +1,5 @@
 <nav style="padding: 0.5% 10%;font-size: 25px; background-color: white;box-shadow: 0 1px 4px rgb(0 0 0 / 50%);" class="navbar fixed-top navbar-expand-lg ">
-    <img style="cursor:pointer; margin: 0% 3%;max-width: 3.4rem;" id="icon" type="image/png" src="/favicon2.png">
+    <img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2.7rem;" id="icon" type="image/png" src="/favicon2.png">
     <a class="navbar-brand" style="    text-align: center;
     margin: 0 8px;
     font-family: -webkit-body;
@@ -7,7 +7,7 @@
     color: #1e252c;" href="/"> <strong>BLOGGER'S</strong> </a>
    
     <button style="background-color: #007bffc7;color: white;" class="navbar-toggler"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        Dropdown
+        <i class="fa fa-bars" aria-hidden="true"></i>
         <!-- <span class="navbar-toggler-icon"></span> -->
     </button>
     <div  class="collapse navbar-collapse" id="navbarSupportedContent" >
@@ -35,7 +35,7 @@
             
         </ul>
         <% if (isAuthenticated) { %>
-            <div class="searchBar" style="width: 40%;padding: 0 2%;">
+            <div class="searchBar" style="width: 50%;padding: 0 2%;">
                 <i style="position: relative;top: 30%;" class="fa fa-search" aria-hidden="true"></i>
                 <input style="border: none;margin-left: 5%;" id="txtSearch" type="text"  placeholder="Search...">
                 
@@ -51,7 +51,7 @@
                     <a  style = "<%= (path === '/register' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/register">Register</a>
                 </li>
             <% } else { %>
-                
+
                 <li class="nav-item ">
                     <a  style = "<%= (path === '/posts/user'|| path === '/profile' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/posts/user"><%=name%></a>
                 </li>

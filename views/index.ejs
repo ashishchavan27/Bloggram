@@ -16,43 +16,33 @@
                 <strong>BLOGGERS</strong>
             </div>
         </div>
-      </div>
     </div>
     <div class="container-fluid"> 
-    <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4 bgimg-1" style="height: 30rem;"></div>
-        <div class="col-sm-12 col-md-4 col-lg-4" style="padding-top: 20px;text-align: center;z-index: 1;">  
-             <div >
-                <div style="font-size: 32px;letter-spacing: 1px;color: #302927;font-family: 'Merriweather';">Grab a coffee and keep blogging!!</div><br><br>
-                <% if (isAuthenticated) { %>
-                <div  style="font-size: 32px;
-                font-weight: 800;
-                letter-spacing: 1px;
-                color: #007bffc7;
-                font-family: 'Merriweather';">Create your own <button class="btn btn-primary" style="background-color: #007bffc7;box-shadow: 0 2px 8px rgb(0 0 0 / 50%);border-color: #007bffc7;"><a href="/posts/add" style="text-decoration: none;color: white;font-size: xx-large;font-family: 'Merriweather';">Blog</a></button></div>
-                <% } else { %>
-                <div  style="font-size: 30px;
-                letter-spacing: 0px;">
-                    <button class="btn btn-primary"style="
-                    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
-                    background-color: #007bffc7;
-                    border-color: #007bffc7;">
-                        <a href="/login" style="text-decoration: none;
-                        color: white;
-                        font-size: xx-large;font-family: 'Merriweather';">Login
-                        </a>
-                    </button> 
-                    to create your own blog 
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-lg-4 bgimg-1" style="height: 30rem;"></div>
+            <div class="col-sm-12 col-md-4 col-lg-4" style="padding-top: 20px;text-align: center;z-index: 1;">  
+                <div >
+                    <div class="coffee">Grab a coffee and keep blogging!!</div>
+                    <% if (isAuthenticated) { %>
+                    <div class="coffee" style="font-weight: 800;color: #007bffc7;">Create your own 
+                        <button class="btn btn-primary" style="background-color: #007bffc7;box-shadow: 0 2px 8px rgb(0 0 0 / 50%);border-color: #007bffc7;">
+                            <a href="/posts/add" style="text-decoration: none;color: white;">Blog</a>
+                        </button>
+                    </div>
+                    <% } else { %>
+                    <div  class="coffee" style="font-weight: 800;color: #007bffc7;">
+                        <button class="btn btn-primary"style="box-shadow: 0 2px 8px rgb(0 0 0 / 50%);background-color: #007bffc7;border-color: #007bffc7;">
+                            <a href="/login" style="text-decoration: none;color: white;">Login</a>
+                        </button> 
+                        to create your own blog 
+                    </div>
+                    <% } %>    
                 </div>
-                <br>
-                <br>
-                <% } %>    
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 bgimg-2" style="height: 30rem;">
+                
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 bgimg-2" style="height: 30rem;">
-            
-        </div>
-    </div>
     </div>
       
     
