@@ -18,44 +18,38 @@
          
     <hr>
     <!-- <img src="/images/<%=post.mainimage%>" alt="John Doe" class="rounded" style="width:400px;margin: 0 37%;"> -->
-    
-    <div class="media border p-3 blog" style="margin: 2% 20%;">
-        
-        <div class="media-body " style="padding: 1% 4%;">
-            
-                <i>Posted in <a href="/categories/findCategory/<%=post.category%>" ><strong><%=post.category%></strong></a> 
-                    by <a href="/categories/findAuthor/<%=post.author%>"><strong><%=post.author%></strong></a> 
-                    on  <%=moment(post.date).format("MM-DD-YYYY")%>
-                </i>
+    <div class="container-fluid"> 
+        <div class="media border p-3 blog row" style="margin: 3% 10%;">
+            <div class="media-body col-12 col-sm-12 col-md-12 col-lg-12" >
+                    <i>Posted in <a href="/categories/findCategory/<%=post.category%>" ><strong><%=post.category%></strong></a> 
+                        by <a href="/categories/findAuthor/<%=post.author%>"><strong><%=post.author%></strong></a> 
+                        on  <%=moment(post.date).format("DD-MM-YYYY")%>
+                    </i>
                 <hr>
-                <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=post.likes.length%>     <a href="/read/<%=post._id%>" ">    Comments: <%=post.comments.length%></a></h5>
-            <hr>
-            
-            <img src="/<%=post.imageUrl%>" alt="<%= post.title %>" class="rounded" style="width:50%;margin: 3% 25%;    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);">
-            <hr>
-            <p><%- post.body%></p>
-            <% var isLiked=false %>
-            <% for(var j=0;j< post.likes.length ;j++) { %>
-                <% if(post.likes[j].name=== name){ %> 
-                    <% isLiked=true %>
-                <% } %>
-            <% } %> 
-            <div class="centered">
+                    <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=post.likes.length%>     <a href="/read/<%=post._id%>" ">    Comments: <%=post.comments.length%></a></h5>
                 <hr>
-                <% if (isAuthenticated) { %>
-                   
-                
-                <% if(!isLiked){ %> 
-                    <button class="btn btn-primary"  value="save" type="submit">
-                        <a style="color: white;text-decoration: none;" href="/posts/like/<%=post._id%>">Like</a> 
-                    </button>
-                <% }else{ %>
-                    <button class="btn btn-danger"  value="save" type="submit">
-                        <a style="color: white;text-decoration: none;" href="/posts/unlike/<%=post._id%>">Unlike</a> 
-                    </button>
-                <%}%>
-                <%}%>
-            </div>   
+                    <img src="/<%= post.imageUrl %>" alt="Post Image" class="rounded" style="width:40%;display:block;margin-left: auto;margin-right: auto;">
+                <hr>
+                    <p><%- post.body%></p>
+                <hr>    
+                    <% var isLiked=false %>
+                    <% for(var j=0;j< post.likes.length ;j++) { %>
+                        <% if(post.likes[j].name=== name){ %> 
+                            <% isLiked=true %>
+                        <% } %>
+                    <% } %> 
+                    <% if (isAuthenticated) { %>
+                        <% if(!isLiked){ %> 
+                            <button class="btn btn-primary"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/posts/like/<%=post._id%>">Like</a> 
+                            </button>
+                        <% }else{ %>
+                            <button class="btn btn-danger"  value="save" type="submit">
+                                <a style="color: white;text-decoration: none;" href="/posts/unlike/<%=post._id%>">Unlike</a> 
+                            </button>
+                        <%}%>
+                    <%}%>
+            </div>
         </div>
     </div>
     <br>
@@ -65,7 +59,8 @@
         <h3 style="text-align: center;font-family: 'Merriweather', serif;">Comments</h3>
         
         <%for(var i=0; i < post.comments.length; i++) {%>
-            <div class="media border p-3 blog" style="margin: 2% 20%; ">
+            <div class="container-fluid"> 
+            <div class="media border p-3 blog row" style="margin: 2% 20%; ">
                 <div class="media-body " style="padding: 1% 4%;">
                     <h2 style="font-weight: bold;" class="comment-name">
                         <%=post.comments[i].name%>
@@ -87,7 +82,7 @@
                 </div>
                 
             </div>
-            
+            </div>
         <% } %>
         <br>
     <% } %>    
