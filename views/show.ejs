@@ -60,7 +60,7 @@
         
         <%for(var i=0; i < post.comments.length; i++) {%>
             <div class="container-fluid"> 
-            <div class="media border p-3 blog row" style="margin: 2% 20%; ">
+            <div class="media border p-3 blog row" style="margin: 3% 10%; ">
                 <div class="media-body " style="padding: 1% 4%;">
                     <h2 style="font-weight: bold;" class="comment-name">
                         <%=post.comments[i].name%>
@@ -92,14 +92,14 @@
         
         <h3 style="text-align: center;font-family: 'Merriweather', serif;">Add Comment</h3>
     
-    <form class="login-form blog" style="margin: 2% 20%;padding: 2% 5%;width: 60%;border: white;" method="POST" action="/posts/addcomment">
+    <form class="login-form blog" style="margin: 3% 10%;padding: 2% 5%;width: 80%;border: white;" method="POST" action="/posts/addcomment">
         <input type="hidden" name="postid" value="<%=post._id%>">
         
             <input type="hidden" name="name" class="form-control" value="<%= currentUser.name %>">  
             <input type="hidden" name="email" class="form-control" value="<%= currentUser.email %>">     
         <div class="form-group">
             <label for="body">Comment :</label>
-            <textarea name="body" id="body" cols="30" rows="4" class="form-control"></textarea>
+            <textarea name="body" id="body" cols="30" rows="2" class="form-control"></textarea>
                 
         </div>
         <button type="submit" class="btn btn-primary" name="submit" value="Add Comment">Add Comment</button>
