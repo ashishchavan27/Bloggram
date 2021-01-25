@@ -80,28 +80,36 @@ router.post('/find', function(req, res, next) {
     
     var errors = req.validationErrors();
     
-
+    if(req.body.category==="All"){
+        res.redirect("/read");
+    }
+    else{
     posts.find({category: req.body.category})
         .then(posts => {
-            if(req.session.isLoggedIn){
-                return res.render('read',{
-                    'title': req.body.category + " Page",
-                    'posts': posts,
-                    explore:false,
-                    name: req.session.name,
-                    userblog: false,
-                    follow: 0,
-                    path: '/read',
-                    "heading": req.body.category + " BLOGS",
-                    isAuthenticated: req.session.isLoggedIn
-                });
-            }
-            if(!req.session.isLoggedIn){
-                req.flash('failure','Kindly Login');
-                return  res.redirect('/login');
-            }  
+            categories.find()
+            .then(categories => {
+                if(req.session.isLoggedIn){
+                    return res.render('read',{
+                        'title': req.body.category + " Page",
+                        'posts': posts,
+                        explore:true,
+                        name: req.session.name,
+                        categories: categories,
+                        userblog: false,
+                        follow: 0,
+                        path: '/read',
+                        "heading": req.body.category ,
+                        isAuthenticated: req.session.isLoggedIn
+                    });
+                }
+                if(!req.session.isLoggedIn){
+                    req.flash('failure','Kindly Login');
+                    return  res.redirect('/login');
+                }  
+            })
         })
         .catch(err => console.log(err));
+    }
 });
 
 router.get('/findCategory/:category', function(req, res, next) {

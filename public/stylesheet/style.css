@@ -33,9 +33,9 @@ body{
 }
 .blogger{
     font-size: 6.5rem;
-    color: #007bffc7;;
-    font-family: 'Merriweather', serif;
-    
+     color: #007bffc7;;
+    /*font-family: 'Merriweather', serif; */
+    font-family: 'PT Sans', sans-serif;
 }
 
 .bg-img {
@@ -88,7 +88,8 @@ body{
     font-size: 32px;
     letter-spacing: 1px;
     color: #302927;
-    font-family: 'Merriweather';
+    /*font-family: 'Merriweather', serif; */
+    font-family: 'PT Sans', sans-serif;
 }
 .create-form {
     max-width: 90%;
@@ -98,6 +99,7 @@ body{
     padding: 5%;
     font-size: 1.6rem;
     font-family: 'Merriweather', serif;
+    /* font-family: 'PT Sans', sans-serif; */
 }
 .footer{
     text-align: center ;
@@ -141,17 +143,29 @@ button:hover, a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 500px;
     margin: 3% auto;
-    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+    /* text-align: center; */
+}
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+}
+.footer-links li {
+    display: block;
+}
+.footer-links a {
+    color: black;
 }
 .login-form {
     max-width: 80%;
     margin: auto;
     display: block;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
-    padding: 5%;
+    /* box-shadow: 0 2px 8px rgb(0 0 0 / 50%); */
+    padding: 0%;
     font-size: 1.6rem;
-    font-family: 'Merriweather', serif;
-    margin-top: 8rem;
+    /*font-family: 'Merriweather', serif; */
+    /* font-family: 'PT Sans', sans-serif; */
+    margin-top: 4rem;
 }
 /* Control the left side */
 .left {
@@ -179,7 +193,8 @@ button:hover, a:hover {
 .heading{
     text-align: center;
     margin: 5% 20px 20px;
-    font-family: 'Merriweather', serif;
+    /*font-family: 'Merriweather', serif; */
+    font-family: 'PT Sans', sans-serif;
     font-size: 5rem;
     color: #007bffc7;
 }
@@ -195,7 +210,17 @@ p{
     color: var(--primary);
     text-decoration: underline;
 }
-
+.site-footer {
+    /* background-color: #26272b; */
+    padding: 45px 0 20px;
+    font-size: 15px;
+    line-height: 24px;
+    color: var(--dark);
+    text-align: center;
+    background-color: var(--gray);
+    color: #000000;
+    margin-top: 2%;
+}
 .searchBar , .searchBar:hover{
     background: #fff;
     display: flex;
@@ -208,6 +233,40 @@ p{
     height: 44px;
     margin: 0 auto;
     font-size: 20px;
+}
+.social-icons {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.site-footer .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d;
+}
+.social-icons a {
+    background-color: #eceeef;
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 44px;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    margin-right: 8px;
+    border-radius: 100%;
+    -webkit-transition: all .2s linear;
+    -o-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-bottom: 4px;
 }
 .split {
     height: 100%;
