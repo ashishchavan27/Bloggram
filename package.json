@@ -17,7 +17,8 @@
   "keywords": [],
   "author": "Ashish Chavan",
   "dependencies": {
-    "aws-sdk": "^2.821.0",
+    "aws-sdk": "2.x",
+
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",

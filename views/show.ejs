@@ -5,7 +5,7 @@
     <%- messages()%>
     
     <div class="container-fluid">     
-        <div class="row">
+        <div class="row" style="margin-right: 0;margin-left: 0;">
             <div class="col-sm-12 col-md-12 col-lg-12 ">
                 <h1 class="heading" >
                     <%=post.title%>
@@ -19,7 +19,7 @@
     <hr>
     <!-- <img src="/images/<%=post.mainimage%>" alt="John Doe" class="rounded" style="width:400px;margin: 0 37%;"> -->
     <div class="container-fluid"> 
-        <div class="media border p-3 blog row" style="margin: 3% 10%;">
+        <div class="media border p-3 blog row"  style="margin: 3% 10%;">
             <div class="media-body col-12 col-sm-12 col-md-12 col-lg-12" >
                     <i>Posted in <a href="/categories/findCategory/<%=post.category%>" ><strong><%=post.category%></strong></a> 
                         by <a href="/categories/findAuthor/<%=post.author%>"><strong><%=post.author%></strong></a> 
