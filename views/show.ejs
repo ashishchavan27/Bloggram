@@ -8,8 +8,9 @@
         <div class="row" style="margin-right: 0;margin-left: 0;">
             <div class="col-sm-12 col-md-12 col-lg-12 ">
                 <h1 class="heading" >
-                    <%=post.title%>
-                    
+                    <strong>
+                        <%=post.title%>
+                    </strong>
                 </h1>
             </div>
         </div>
@@ -19,18 +20,20 @@
     <hr>
     <!-- <img src="/images/<%=post.mainimage%>" alt="John Doe" class="rounded" style="width:400px;margin: 0 37%;"> -->
     <div class="container-fluid"> 
-        <div class="media border p-3 blog row"  style="margin: 3% 10%;">
+        <div class="media border p-3 blog row" style="margin-right: 0;margin-left: 0;"  >
             <div class="media-body col-12 col-sm-12 col-md-12 col-lg-12" >
+                <strong>
                     <i>Posted in <a href="/categories/findCategory/<%=post.category%>" ><strong><%=post.category%></strong></a> 
                         by <a href="/categories/findAuthor/<%=post.author%>"><strong><%=post.author%></strong></a> 
                         on  <%=moment(post.date).format("DD-MM-YYYY")%>
                     </i>
+                    <hr>
+                        <h5 style="color: var(--primary);">Likes: <%=post.likes.length%>     <a href="/read/<%=post._id%>" ">    Comments: <%=post.comments.length%></a></h5>
+                    <hr>
+                </strong>    
+                    <img src="/<%= post.imageUrl %>" alt="Post Image" class="show-post-image rounded" style="display:block;margin-left: auto;margin-right: auto;">
                 <hr>
-                    <h5 style="color: var(--primary);font-family: 'Merriweather', serif;">Likes: <%=post.likes.length%>     <a href="/read/<%=post._id%>" ">    Comments: <%=post.comments.length%></a></h5>
-                <hr>
-                    <img src="/<%= post.imageUrl %>" alt="Post Image" class="rounded" style="width:40%;display:block;margin-left: auto;margin-right: auto;">
-                <hr>
-                    <p><%- post.body%></p>
+                    <p style="font-family: none;"><%- post.body%></p>
                 <hr>    
                     <% var isLiked=false %>
                     <% for(var j=0;j< post.likes.length ;j++) { %>
@@ -56,11 +59,11 @@
     <hr>
     <%if(post.comments.length>0){%>
     
-        <h3 style="text-align: center;font-family: 'Merriweather', serif;">Comments</h3>
+        <h3 style="text-align: center;font-family: 'PT Sans', sans-serif;">Comments</h3>
         
         <%for(var i=0; i < post.comments.length; i++) {%>
             <div class="container-fluid"> 
-            <div class="media border p-3 blog row" style="margin: 3% 10%; ">
+            <div class="media border p-3 blog row" style="margin-right: 0;margin-left: 0;" >
                 <div class="media-body " style="padding: 1% 4%;">
                     <h2 style="font-weight: bold;" class="comment-name">
                         <%=post.comments[i].name%>
@@ -90,9 +93,9 @@
     <% if (isAuthenticated) { %>
         
         
-        <h3 style="text-align: center;font-family: 'Merriweather', serif;">Add Comment</h3>
+        <h3 style="text-align: center;font-family: 'PT Sans', sans-serif;">Add Comment</h3>
     
-    <form class="login-form blog" style="margin: 3% 10%;padding: 2% 5%;width: 80%;border: white;" method="POST" action="/posts/addcomment">
+    <form class="login-form blog" style="padding: 2% 5%;width: 80%;border: white;" method="POST" action="/posts/addcomment">
         <input type="hidden" name="postid" value="<%=post._id%>">
         
             <input type="hidden" name="name" class="form-control" value="<%= currentUser.name %>">  

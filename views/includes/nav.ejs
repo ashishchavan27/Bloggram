@@ -1,4 +1,4 @@
-<nav style="padding: 0.5% 10%;font-size: 25px; background-color: white;" class="navbar fixed-top navbar-expand-lg ">
+<nav style="padding: 0.5% 10%;font-size: 25px; background-color: white;font-family: 'PT Sans';" class="navbar fixed-top navbar-expand-lg ">
     <img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2.7rem;" id="icon" type="image/png" src="/favicon2.png">
     <a class="navbar-brand" style="    text-align: center;
     margin: 0 8px;
@@ -15,19 +15,19 @@
             <% if (!isAuthenticated) { %>
             
             <li class= "nav-item  ">
-                <a  style="<%= path === '/' ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/">Home</a>
+                <a  style="<%= path === '/' ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/">Home</a>
             </li>
             <% }else{ %>
             <li class="nav-item ">
-                <a  style = "<%= path === '/feed' ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/feed">Feed</a>
+                <a  style = "<%= path === '/feed' ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/feed">Feed</a>
             </li>
             <% } %>
             <li class= "nav-item  ">
-                <a  style="<%= path === '/read' ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/read">Explore</a>
+                <a  style="<%= path === '/read' ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/read">Explore</a>
             </li>
             <% if (isAuthenticated) { %>
             <li class="nav-item ">
-                <a  style="<%= path === '/posts/add' ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/posts/add">Create</a>
+                <a  style="<%= path === '/posts/add' ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/posts/add">Create</a>
             </li>
             
             
@@ -35,9 +35,9 @@
             
         </ul>
         <% if (isAuthenticated) { %>
-            <div class="searchBar" style="width: 50%;padding: 0 2%;">
+            <div class="searchBar" style="width: 100%;padding: 0 2%;max-width: 400px;">
                 <i style="position: relative;top: 30%;" class="fa fa-search" aria-hidden="true"></i>
-                <input style="border: none;margin-left: 5%;" id="txtSearch" type="text"  placeholder="Search...">
+                <input class="searchBar-input-box" id="txtSearch" type="text"  placeholder="Search...">
                 
                 <a style="display: none;" id="search-submit">search</a>
             </div>
@@ -45,20 +45,19 @@
         <ul class="navbar-nav ml-auto" >
             <% if (!isAuthenticated) { %>
                 <li class="nav-item ">
-                    <a  style = "<%= (path === '/login' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/login">Login</a>
+                    <a  style = "<%= (path === '/login' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/login">Login</a>
                 </li>
                 <li class="nav-item ">
-                    <a  style = "<%= (path === '/register' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/register">Register</a>
+                    <a  style = "<%= (path === '/register' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/register">Register</a>
                 </li>
             <% } else { %>
 
                 <li class="nav-item ">
-                    <a  style = "<%= (path === '/posts/user'|| path === '/profile' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 24px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/posts/user"><%=name%></a>
+                    <a  style = "<%= (path === '/posts/user'|| path === '/profile' ) ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/posts/user"><%=name%></a>
                 </li>
                 <li class="nav-item ">
-                    <form class="nav-item" style =" border: none;" action="/logout" method="post">
-                        <button type="submit" class="btn btn-danger">Logout</button>
-                    </form>
+                    <a href="/logout" style="margin-top: 7%;" class=" btn btn-danger">Logout</a>
+                    
                 </li>
             <% } %>
         </ul>  

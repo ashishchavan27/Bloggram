@@ -127,7 +127,7 @@ router.get('/findCategory/:category', function(req, res, next) {
                     userblog: false,
                     follow: 0,
                     path: '/read',
-                    "heading": req.params.category + " BLOGS",
+                    "heading": req.params.category,
                     isAuthenticated: req.session.isLoggedIn
                 });
             }

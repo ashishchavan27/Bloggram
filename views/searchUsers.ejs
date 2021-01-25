@@ -77,7 +77,8 @@
                
                   
                     <img src="/<%= posts[i].imageUrl %>" class="card-img-top" alt="Blog Image">
-                        <div class="card-body">
+                        <div class="card-body" style="    flex: 1 1 auto;
+                        padding: 1.25rem 1.25rem 0 1.25rem;">
                             
                             <h5 class="card-title"><a  href="/read/<%=posts[i]._id%>" style="color: #1e252c"><%=posts[i].title%></a></h5>
                             <h6 >
@@ -95,7 +96,7 @@
                             <% if(posts[i].body.length>=100){ %> 
                                 <%- posts[i].body.substring(0, 100) %>...
                                 <br>
-                                <a class="sorting-links" style="font-weight: bold;/*font-family: 'Merriweather', serif; */ " href="/read/<%=posts[i]._id%>">Read more</a>    
+                                <a class="sorting-links"  href="/read/<%=posts[i]._id%>">Read more</a>    
                             <% }else{ %>
                             <%- posts[i].body%>
                             <% }  %>

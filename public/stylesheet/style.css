@@ -16,7 +16,7 @@ body{
     padding-top: 50px;
     height: 100%;
     margin: 0;
-    font: 400 15px/1.8 "Lato", sans-serif;
+    font-family: 'PT Sans', sans-serif;
     color: #777;
     /* background-color:#96b7ff; */
     /* background-image: url("bg6.jpg"); */
@@ -24,8 +24,9 @@ body{
 .blog{
     margin: 3% 15%;
     border: solid 1px white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);   
-    background-color:white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+    background-color: white;
+    border-radius: 6px;
 }
 .btn{
     box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
@@ -80,6 +81,13 @@ body{
     letter-spacing: 5px;
     
 }
+.card-img-top {
+    width: 100%;
+    min-height: 15.5rem;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
 .centered{
     text-align: center;
 }
@@ -95,11 +103,11 @@ body{
     max-width: 90%;
     margin: auto;
     display: block;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
-    padding: 5%;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    padding: 3%;
     font-size: 1.6rem;
-    font-family: 'Merriweather', serif;
-    /* font-family: 'PT Sans', sans-serif; */
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'PT Sans', sans-serif;
 }
 .footer{
     text-align: center ;
@@ -146,6 +154,9 @@ button:hover, a:hover {
     font-family: 'PT Sans', sans-serif;
     /* text-align: center; */
 }
+.container-fluid {
+    font-family: 'PT Sans', sans-serif;
+}
 .footer-links {
     padding-left: 0;
     list-style: none;
@@ -164,7 +175,7 @@ button:hover, a:hover {
     padding: 0%;
     font-size: 1.6rem;
     /*font-family: 'Merriweather', serif; */
-    /* font-family: 'PT Sans', sans-serif; */
+    font-family: 'PT Sans', sans-serif;
     margin-top: 4rem;
 }
 /* Control the left side */
@@ -175,7 +186,7 @@ button:hover, a:hover {
   
   
 .nav-item{
-    margin: 4px;
+    margin: 0 8px;
     font-size: 21px;
     text-align: center;
 }
@@ -207,7 +218,7 @@ p{
     
 }
 .sorting-links{
-    color: var(--primary);
+    color: #6c757d;
     text-decoration: underline;
 }
 .site-footer {
@@ -233,6 +244,14 @@ p{
     height: 44px;
     margin: 0 auto;
     font-size: 20px;
+}
+.searchBar-input-box{
+    border: none;
+    width: 100%;
+    padding-left: 5%;
+}
+.show-post-image{
+    width: 40%;
 }
 .social-icons {
     padding-left: 0;
@@ -318,5 +337,86 @@ ul.failure li{
 input:focus, textarea:focus, select:focus{
     outline: none;
 }
+@media only screen and (max-width: 525px) {
+    .blogger{
+        font-size: 4.0rem;
+    }
+    .coffee{
+        font-size: 1rem;
+    }
+}
 
-  
+@media only screen and (max-width: 525px) {
+    .heading{
+        font-size: 3rem;
+    }
+    .show-post-image{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 998px) {
+    .create-form{
+        margin:  2% 20% 5%;
+    }.login-form{
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 998px) {
+    .create-form{
+        max-width: 100%;
+        font-size: 1.2rem;
+        box-shadow: none;
+    }
+    .login-form{
+        max-width: 100%;
+        font-size: 1.2rem;
+        box-shadow: none;
+        margin-top: 4rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .bgimg-2{
+        display: none;
+    }
+    .coffee{
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .blog{
+        margin:  3% 10%;
+    }
+    
+}
+
+@media (min-width: 576px){
+
+    .container-fluid {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px){
+
+    .container-fluid {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px){
+
+.container-fluid {
+    max-width: 960px;
+}
+}
+
+    
+@media (min-width: 1200px){
+    .container-fluid {
+        max-width: 1140px;
+    }
+}

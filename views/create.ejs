@@ -3,9 +3,9 @@
 
 <body style="    background-color: var(--light);">
     <%- messages()%>
-    <div class="container-fluid">     
+    <div class="container-fluid" style="padding-right: 0;padding-left: 0;">     
         <div class="row"  style="margin-right: 0;margin-left: 0;">
-            <div class="col-sm-12 col-md-12 col-lg-12 ">
+            <div class="col-sm-12 col-md-12 col-lg-12 " style="padding-right: 0;padding-left: 0;">
                 <h1 class="heading" style="margin-top: 5%;" >
                     CREATE BLOG
                 </h1>
@@ -13,9 +13,9 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid"> 
+    <div class="container-fluid" style="padding-right: 0;padding-left: 0;"> 
         <div class="row"   style="margin-right: 0;margin-left: 0;">
-            <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-12 col-md-12 col-lg-12" style="padding-right: 0;padding-left: 0;" >
                 <form class="create-form"  action="<% if (editing) { %> /read/<%=post._id%><% }else{ %>/read<% }%>"  method="POST" enctype="multipart/form-data" >
                     <!-- <%- messages()%> -->
                     
@@ -48,7 +48,7 @@
                           type="file"
                           name="image"
                           id="image"
-                          style="margin: 0 3%;font-size: medium;padding: 1%;"
+                          style="    font-size: medium;width: 100%;"
                           value="<% if (editing) { %><%= post.imageUrl %><% } %>"
                         />
                     </div>

@@ -360,7 +360,7 @@ router.post('/update/:user', function(req, res, next) {
     
 });
 
-router.post('/logout', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
 	req.session.destroy(err => {
         console.log(err);
         res.redirect('/');
