@@ -18,6 +18,7 @@ body{
     margin: 0;
     font-family: 'PT Sans', sans-serif;
     color: #777;
+    background-color: none;
     /* background-color:#96b7ff; */
     /* background-image: url("bg6.jpg"); */
 }
@@ -34,7 +35,7 @@ body{
 }
 .blogger{
     font-size: 6.5rem;
-     color: #007bffc7;;
+     color: #6c757d;
     /*font-family: 'Merriweather', serif; */
     font-family: 'PT Sans', sans-serif;
 }
@@ -64,6 +65,9 @@ body{
 .bgimg-2 {
     background-image: url("bg10.jpg");
     height: 100%;
+}
+.blog-view{
+    display: flex;
 }
 .caption {
     position: absolute;
@@ -133,6 +137,9 @@ form{
 }
 .form-control{
     width: auto;
+}
+.font{
+    font-family: 'PT Sans', sans-serif;
 }
 html {
     position: relative;
@@ -244,6 +251,7 @@ p{
     height: 44px;
     margin: 0 auto;
     font-size: 20px;
+    margin: 0 2%;   
 }
 .searchBar-input-box{
     border: none;
@@ -384,6 +392,9 @@ input:focus, textarea:focus, select:focus{
     }
     .coffee{
         font-size: 1.5rem;
+    }
+    .blog-view{
+        display: inline;
     }
 }
 @media only screen and (min-width: 768px) {
