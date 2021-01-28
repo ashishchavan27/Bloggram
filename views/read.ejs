@@ -139,17 +139,24 @@
                                     <% isLiked=true %>
                                 <% } %>
                             <% } %>
+                             
+                            
                             <h5 >
+                                <% if(isAuthenticated){ %>
                                 <% if(!isLiked){ %> 
                                     <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-like"id="like-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/heart.png"></a>
                                         
                                 <% }else{ %>
                                     <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-unlike"id="unlike-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/liked.png"></a>
                                 <%}%>
+                                <%}else{%>
+                                    <a href="/login" class="btn btn-like"id="login"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/login.png"></a>
+                                <%}%>
+                            
                                 Likes: <%=posts[i].likes.length%>     <a class="sorting-links" href="/read/<%=posts[i]._id%>" >   
                                 Comments: <%=posts[i].comments.length%></a>
                             </h5>
-                                
+                            
                             <% if (userblog) { %>
                                 <hr>
                                 <button class="btn " style="background-color: #00adb5;    margin: 0 0.5%;" type="submit"> <a href="/posts/edit/<%=posts[i]._id%>" style="color: white;text-decoration: none;">edit</a> </button>
