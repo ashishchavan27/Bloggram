@@ -79,48 +79,68 @@
             <div class="card ">
                
                   
-                    <img src="/<%= posts[i].imageUrl %>" class="card-img-top" alt="Blog Image">
-                        <div class="card-body" style="    flex: 1 1 auto;
-                        padding: 1.25rem 1.25rem 0 1.25rem;">
+                <img src="/<%= posts[i].imageUrl %>" class="card-img-top" alt="Blog Image">
+                <div class="card-body" style="    flex: 1 1 auto;
+                padding: 1.25rem 1.25rem 0 1.25rem;">
+                    
+                    <h5 class="card-title"><a  href="/read/<%=posts[i]._id%>" style="color: #1e252c"><strong><%=posts[i].title%></strong></a>(<a href="/categories/findCategory/<%=posts[i].category%>" class="sorting-links" ><strong><%=posts[i].category%></strong></a> )</h5>
+                    <hr>
+                    
+                    <div style="display: flex">
+                        <div class="col-6" style="padding-right:0px;padding-left: 0px;">
                             
-                            <h5 class="card-title"><a  href="/read/<%=posts[i]._id%>" style="color: #1e252c"><%=posts[i].title%></a></h5>
-                            <h6 >
-                                <i>Category: 
-                                <a href="/categories/findCategory/<%=posts[i].category%>" class="sorting-links" ><strong><%=posts[i].category%></strong></a> 
-                            </h6>
-                            <h6 >
                                 Author:  <a href="/categories/findAuthor/<%=posts[i].author%>" class="sorting-links"><strong><%=posts[i].author%></strong></a> 
-                            </h6>
-                            <h6 >
-                                Date:  <%=moment(posts[i].date).format("MM-DD-YYYY")%>
-                                </i>
-                            </h6>
-                        <p class="card-text">
+                            
+                        </div>
+                        <div class="col-6" style="padding-right:0px;padding-left: 0px;">
+                            
+                                Date:  <%=moment(posts[i].date).format("DD-MM-YYYY")%>
+                            
+                        </div>
+                        
+                    </div>
+                        
+                    
+                    <hr>
+                    <div >
+                        
                             <% if(posts[i].body.length>=100){ %> 
                                 <%- posts[i].body.substring(0, 100) %>...
-                                <br>
-                                <a class="sorting-links" href="/read/<%=posts[i]._id%>">Read more</a>    
+                                <a class="sorting-links"  href="/read/<%=posts[i]._id%>">Read more</a>    
                             <% }else{ %>
                             <%- posts[i].body%>
                             <% }  %>
-                        </p>
-                        <% var isLiked=false %>
-                            <% for(var j=0;j< posts[i].likes.length ;j++) { %>
-                                <% if(posts[i].likes[j].name=== name){ %> 
-                                    <% isLiked=true %>
-                                <% } %>
-                            <% } %>
-                            <% if(!isLiked){ %> 
-                                <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-like"id="like-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/heart.png"></a>
-                            <% }else{ %>
-                                <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-unlike"id="unlike-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/liked.png"></a>
-                            <%}%>
-                            <hr>
-                            <h5 >Likes: <%=posts[i].likes.length%>     <a href="/read/<%=posts[i]._id%>" ">    Comments: <%=posts[i].comments.length%></a></h5>
-                        </div>
-                  
-             
-                  
+                        
+                    </div>
+                
+                <hr>
+                    <% var isLiked=false %>
+                    <% for(var j=0;j< posts[i].likes.length ;j++) { %>
+                        <% if(posts[i].likes[j].name=== name){ %> 
+                            <% isLiked=true %>
+                        <% } %>
+                    <% } %>
+                    <h5 >
+                        <% if(!isLiked){ %> 
+                            <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-like"id="like-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/heart.png"></a>
+                                
+                        <% }else{ %>
+                            <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-unlike"id="unlike-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/liked.png"></a>
+                        <%}%>
+                        Likes: <%=posts[i].likes.length%>     <a class="sorting-links" href="/read/<%=posts[i]._id%>" >   
+                        Comments: <%=posts[i].comments.length%></a>
+                    </h5>
+                        
+                    <% if (userblog) { %>
+                        <hr>
+                        <button class="btn " style="background-color: #00adb5;    margin: 0 0.5%;" type="submit"> <a href="/posts/edit/<%=posts[i]._id%>" style="color: white;text-decoration: none;">edit</a> </button>
+                        <button class="btn " style="background-color: #ec625f;    margin: 0 0.5%;" type="submit" ><a href="/posts/delete/<%=posts[i]._id%>" style="color: white;text-decoration: none;">delete</a> </button>
+                    <% } %>
+                    <br>
+                </div>
+          
+                
+          
                 
             </div>
         </div>
