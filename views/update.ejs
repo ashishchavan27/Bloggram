@@ -14,13 +14,28 @@
             <label for="name"> Name: </label>
             <input disabled style="    margin: 0 3%;" class="form-control" type="text" name="name" value="<%= user.name%>">
         </div>
-        <br>
-        
         <div class="form-group" style="display: flex;">
-            <label for="email">Email*:</label>
+            <label for="email">Email:</label>
             <input disabled style="    margin: 0 3%;" class="form-control" type="email" name="email" value="<%= user.email %>">
         </div>
         <div class="form-group" style="display: flex;">
+            <label for="facebook">Facebook:</label>
+            <input style="margin: 0 3%;" class="form-control" type="text" name="facebook" value="<%= user.facebook %>">
+        </div>
+        <div class="form-group" style="display: flex;">
+            <label for="twitter">Twitter:</label>
+            <input style="margin: 0 3%;" class="form-control" type="text" name="twitter" value="<%= user.twitter %>">
+        </div>
+        <div class="form-group" style="display: flex;">
+            <label for="instagrAM">Instagram:</label>
+            <input style="margin: 0 3%;" class="form-control" type="text" name="instagram" value="<%= user.instagram %>">
+        </div>
+        <div class="form-group" style="display: flex;">
+            <label for="linkedin">Linkedin:</label>
+            <input style="margin: 0 3%;" class="form-control" type="text" name="linkedin" value="<%= user.linkedin %>">
+        </div>
+        
+        <div class="form-group" style="display: none;">
             <label for="image">Profile pic:</label>
             <input
               type="file"

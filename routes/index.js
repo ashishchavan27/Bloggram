@@ -305,12 +305,14 @@ router.get('/update/:user', function(req, res, next) {
 });
 
 router.post('/update/:user', function(req, res, next) {
-    var imageUrl;
-    var image=req.file;
-    if(!image){
-        imageUrl= "uploads/noprofile.png"; 
+    
         var email = req.session.email;
         var name = req.session.name;
+        var userfacebook =req.body.facebook;
+        var usertwitter =req.body.twitter;
+        var userinstagram =req.body.instagram;
+        var userlinkedin =req.body.linkedin;
+
         var errors = req.validationErrors();
         
         console.log(name);
@@ -320,7 +322,10 @@ router.post('/update/:user', function(req, res, next) {
             var currentUser=users[0];
             currentUser.name=name;
             currentUser.email=email;
-            currentUser.imageUrl=imageUrl;
+            currentUser.facebook=userfacebook;
+            currentUser.twitter=usertwitter;
+            currentUser.instagram=userinstagram;
+            currentUser.linkedin=userlinkedin;
             currentUser.save()
             .then(result => {
                 req.flash('success','Profile Updated');
@@ -330,30 +335,30 @@ router.post('/update/:user', function(req, res, next) {
         })
         .catch(err=>console.log(err)); 
     
-    }else{
+    // }else{
         
-        imageUrl= image.path;var email = req.session.email;
-        var name = req.session.name;
-        var errors = req.validationErrors();
+    //     imageUrl= image.path;var email = req.session.email;
+    //     var name = req.session.name;
+    //     var errors = req.validationErrors();
         
-        console.log(name);
-        console.log(email);
-        users.find({"email":req.session.email})
-        .then(users=>{
-            var currentUser=users[0];
-            currentUser.name=name;
-            currentUser.email=email;
-            currentUser.imageUrl=imageUrl;
-            currentUser.save()
-            .then(result => {
-                req.flash('success','Profile Updated');
-                res.location('/posts/user');
-                res.redirect('/posts/user');
-            }).catch(err => console.log(err));
-        })
-        .catch(err=>console.log(err)); 
+    //     console.log(name);
+    //     console.log(email);
+    //     users.find({"email":req.session.email})
+    //     .then(users=>{
+    //         var currentUser=users[0];
+    //         currentUser.name=name;
+    //         currentUser.email=email;
+    //         currentUser.imageUrl=imageUrl;
+    //         currentUser.save()
+    //         .then(result => {
+    //             req.flash('success','Profile Updated');
+    //             res.location('/posts/user');
+    //             res.redirect('/posts/user');
+    //         }).catch(err => console.log(err));
+    //     })
+    //     .catch(err=>console.log(err)); 
         
-    }
+    // }
 
     
 

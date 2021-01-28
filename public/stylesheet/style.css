@@ -30,9 +30,29 @@ body{
     border-radius: 6px;
 }
 .btn{
-    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+    /* box-shadow: 0 2px 8px rgb(0 0 0 / 30%); */
     letter-spacing: 1px;
 }
+.btn:hover{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+}
+.btn-like{
+    /* box-shadow: 0 2px 8px rgb(0 0 0 / 30%); */
+    background-color: white;
+    border-color: white;
+}
+.btn-like:hover{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+}
+.btn-unlike{
+    /* box-shadow: 0 2px 8px rgb(0 0 0 / 30%); */
+    background-color: white;
+    border-color: white;
+}
+.btn-unlike:hover{
+    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+}
+
 .blogger{
     font-size: 6.5rem;
     color: #007bffc7;
@@ -87,13 +107,14 @@ body{
 }
 .card-img-top {
     width: 100%;
-    min-height: 15.5rem;
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
 }
 
 .centered{
     text-align: center;
+    font-family: 'PT Sans';
+    font-weight: 700;
 }
 .coffee{
     margin-top: 10%;

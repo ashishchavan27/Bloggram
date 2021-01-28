@@ -27,7 +27,19 @@ const userSchema = new Schema({
   },
   following:{
     type: Array
-  }
+  },
+  facebook: {
+    type: String
+  },
+  twitter: {
+    type: String
+  },
+  instagram: {
+    type: String
+  },
+  linkedin: {
+    type: String
+  },
 });
 
 module.exports = mongoose.model('users', userSchema);

@@ -28,7 +28,13 @@
                 <p class="title" style="color: grey;font-size: 18px;">Followers: <a href="/followers/<%=user.name%>"><%= user.followers.length%></a></p>
                 <p class="title" style="color: grey;font-size: 18px;">Following: <a href="/following/<%=user.name%>"><%= user.following.length%></a></p>
                 <p class="title" style="color: grey;font-size: 18px;">Total Blogs: <%=posts.length%></p>
-                
+                <ul class="social-icons">
+                    <li><a class="facebook" href="<%=user.facebook%>"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="twitter" href="<%=user.twitter%>"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="instagram" href="<%=user.instagram%>"><i class="fa fa-instagram"></i></a></li>
+                    <li><a class="linkedin" href="<%=user.linkedin%>"><i class="fa fa-linkedin"></i></a></li>   
+                </ul>
+                <hr>
                 <% if(follow===1 ){ %>
                     <form action="/follow/<%=author%>" method="GET" style="border: none;margin: 0%;padding: 0%;border-radius: 0%;">
                         <button class="btn btn-primary" value="save" type="submit" style="width: 100%; border-radius: 0;">
@@ -40,6 +46,13 @@
                     <form action="/unfollow/<%=author%>" method="GET" style="border: none;margin: 0%;padding: 0%;border-radius: 0%;">
                         <button class="btn btn-danger" value="save" type="submit" style="width: 100%; border-radius: 0;">
                             Unfollow 
+                        </button>    
+                    </form>
+                <%} %>
+                <% if(follow===3 ){ %>
+                    <form action="/update/<%=user.name%>" method="GET" style="border: none;margin: 0%;padding: 0%;border-radius: 0%;">
+                        <button class="btn btn-primary" value="save" type="submit" style="width: 100%; border-radius: 0;">
+                            Update 
                         </button>    
                     </form>
                 <%} %>
@@ -82,7 +95,7 @@
             
     
         <div class="col col-12 col-sm-6 col-lg-3" style="padding: 2%;">
-            <div class="card h-100">
+            <div class="card ">
                
                   
                     <img src="/<%= posts[i].imageUrl %>" class="card-img-top" alt="Blog Image">
@@ -128,9 +141,10 @@
                             <% } %>
                             <h5 >
                                 <% if(!isLiked){ %> 
-                                        <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-primary"id="like-Post">like</a>
+                                    <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-like"id="like-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/heart.png"></a>
+                                        
                                 <% }else{ %>
-                                    <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-danger"id="unlike-Post">Unlike</a>
+                                    <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-unlike"id="unlike-Post"><img style="cursor:pointer; margin: 0% 3% 0 0 ;max-width: 2rem;" type="image/png" src="/liked.png"></a>
                                 <%}%>
                                 Likes: <%=posts[i].likes.length%>     <a class="sorting-links" href="/read/<%=posts[i]._id%>" >   
                                 Comments: <%=posts[i].comments.length%></a>
@@ -141,6 +155,7 @@
                                 <button class="btn " style="background-color: #00adb5;    margin: 0 0.5%;" type="submit"> <a href="/posts/edit/<%=posts[i]._id%>" style="color: white;text-decoration: none;">edit</a> </button>
                                 <button class="btn " style="background-color: #ec625f;    margin: 0 0.5%;" type="submit" ><a href="/posts/delete/<%=posts[i]._id%>" style="color: white;text-decoration: none;">delete</a> </button>
                             <% } %>
+                            <br>
                         </div>
                   
                         
