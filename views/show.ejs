@@ -44,11 +44,11 @@
                     <% if (isAuthenticated) { %>
                         <% if(!isLiked){ %> 
                             <button class="btn btn-primary"  value="save" type="submit">
-                                <a style="color: white;text-decoration: none;" href="/posts/like/<%=post._id%>">Like</a> 
+                                <a style="color: white;text-decoration: none;"id="like-Post" href="/posts/like/<%=post._id%>">Like</a> 
                             </button>
                         <% }else{ %>
                             <button class="btn btn-danger"  value="save" type="submit">
-                                <a style="color: white;text-decoration: none;" href="/posts/unlike/<%=post._id%>">Unlike</a> 
+                                <a style="color: white;text-decoration: none;"id="unlike-Post" href="/posts/unlike/<%=post._id%>">Unlike</a> 
                             </button>
                         <%}%>
                     <%}%>

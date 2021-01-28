@@ -106,9 +106,9 @@
                                 <% } %>
                             <% } %>
                             <% if(!isLiked){ %> 
-                                    <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-primary">like</a>
+                                    <a href="/posts/like/<%=posts[i]._id%>" class="btn btn-primary" id="like-Post">like</a>
                             <% }else{ %>
-                                <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-danger">Unlike</a>
+                                <a href="/posts/unlike/<%=posts[i]._id%>" class="btn btn-danger" id="unlike-Post">Unlike</a>
                             <%}%>
                             <hr>
                             <h5 >Likes: <%=posts[i].likes.length%>     <a href="/read/<%=posts[i]._id%>" ">    Comments: <%=posts[i].comments.length%></a></h5>

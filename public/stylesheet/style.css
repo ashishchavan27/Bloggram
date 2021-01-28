@@ -155,11 +155,15 @@ button:hover, a:hover {
 }
 
 .card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
     max-width: 500px;
     margin: 3% auto;
     font-family: 'PT Sans', sans-serif;
+    transition: 0s;
     /* text-align: center; */
+}
+.card:hover{
+    box-shadow: 0 0px 8px 2px rgba(0, 0, 0, 0.2);
 }
 .container-fluid {
     font-family: 'PT Sans', sans-serif;
@@ -237,7 +241,7 @@ p{
     text-align: center;
     background-color: var(--gray);
     color: #000000;
-    margin-top: 2%;
+    margin-top: 5rem;
 }
 .searchBar , .searchBar:hover{
     background: #fff;
