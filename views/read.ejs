@@ -27,7 +27,7 @@
                 <h5 class="card-title"><%= user.name%></h5>
                 <p class="title" style="color: grey;font-size: 18px;">Followers: <a href="/followers/<%=user.name%>"><%= user.followers.length%></a></p>
                 <p class="title" style="color: grey;font-size: 18px;">Following: <a href="/following/<%=user.name%>"><%= user.following.length%></a></p>
-                <p class="title" style="color: grey;font-size: 18px;">Total Blogs: <%=posts.length%></p>
+                <p class="title" style="color: grey;font-size: 18px;">Blogs written: <%=posts.length%></p>
                 <ul class="social-icons">
                     <li><a class="facebook" href="<%=user.facebook%>"><i class="fa fa-facebook"></i></a></li>
                     <li><a class="twitter" href="<%=user.twitter%>"><i class="fa fa-twitter"></i></a></li>
@@ -59,8 +59,14 @@
             </div>
         </div>
         </div>
-    <h2 class="centered" style="font-family: 'PT Sans';">
-        Blogs written by <%= user.name%>
+        <% if(posts.length==0) { %>
+            <h2 class="centered" style="font-family: 'PT Sans';">
+            No blogs written by <%= user.name%>
+        <%}else{%>
+
+            <h2 class="centered" style="font-family: 'PT Sans';">
+            Blogs written by <%= user.name%>
+        <%}%>
    </h2>
     <%}else{%>
         <% if (explore) { %>
@@ -91,6 +97,7 @@
         <%}%>
     <%}%>
     <div class="row row-cols-1 row-cols-md-3" style="margin-right: 0;margin-left: 0;">
+        
         <% for(var i=posts.length-1; i >= 0; i--) { %>
             
     

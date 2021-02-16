@@ -209,7 +209,7 @@ button:hover, a:hover {
     font-size: 1.6rem;
     /*font-family: 'Merriweather', serif; */
     font-family: 'PT Sans', sans-serif;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 /* Control the left side */
 .left {
@@ -236,7 +236,7 @@ button:hover, a:hover {
 
 .heading{
     text-align: center;
-    margin: 5% 20px 20px;
+    margin: 2% 20px 20px;
     /*font-family: 'Merriweather', serif; */
     font-family: 'PT Sans', sans-serif;
     font-size: 5rem;
@@ -263,7 +263,7 @@ p{
     text-align: center;
     background-color: var(--gray);
     color: #000000;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 .searchBar , .searchBar:hover{
     background: #fff;
