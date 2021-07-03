@@ -9,37 +9,47 @@
         </div>
         
     </div> -->
-    
+<!--     
     <div class="container-fluid1">     
         <div class="row"  style="margin-right: 0;margin-left: 0; margin-top: 2rem;">
-            <div class="col-sm-12 col-md-12 col-lg-12 blogger centered" style="margin-top: 2%;">
+            <div class="col-sm-12 col-md-6 col-lg-6 blogger centered" style="margin-top: 2%;">
+                <strong></strong>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 blogger" style="margin-top: 2%;">
                 <strong>Bloggers</strong>
             </div>
         </div>
-    </div>
-    <div class="container-fluid1"> 
+    </div> -->
+    <div class="container-fluid"> 
         <div class="row"  style="margin-right: 0;margin-left: 0;">
-            <div class="col-sm-12 col-md-4 col-lg-4 bgimg-1" style="height: 30rem;"></div>
-            <div class="col-sm-12 col-md-4 col-lg-4" style="padding-top: 20px;text-align: center;z-index: 1;">  
+            <!-- <div class="col-sm-12 col-md-6 col-lg-6 bgimg-1" style="height: 30rem;"></div> -->
+            <div class="col-sm-12 col-md-6 col-lg-6" style="    padding-top: 20px;
+            /* text-align: center; */
+            z-index: 1;
+            margin: 5% 0 0% 3%;
+            padding: 5% 0 0 6%;">  
                 <div >
+                    <div class="col-12 blogger" style="    margin: -15px;">
+                        <strong >Bloggers</strong><hr>
+                    </div>
                     <div class="coffee">Grab a coffee and keep blogging!!</div>
                     <% if (isAuthenticated) { %>
                     <div class="coffee" style="color: #007bffc7;">Are to ready to start your first blog?<br> 
-                        <button class="btn btn-primary" style="background-color: #007bffc7;box-shadow: 0 2px 8px rgb(0 0 0 / 50%);border-color: #007bffc7;">
+                        <button class="btn btn-primary" style="margin: 3% 0;background-color: #007bffc7;box-shadow: 0 2px 8px rgb(0 0 0 / 50%);border-color: #007bffc7;">
                             <a href="/posts/add" style="text-decoration: none;color: white;">Get Started</a>
                         </button>
                     </div>
                     <% } else { %>
                     <div class="coffee" style="color: #007bffc7;">
                         Start your blog journey with us!! <br>
-                        <button class="btn btn-primary"style="box-shadow: 0 2px 8px rgb(0 0 0 / 50%);background-color: #007bffc7;border-color: #007bffc7;">
+                        <button class="btn btn-primary"style="margin: 3% 0;box-shadow: 0 2px 8px rgb(0 0 0 / 50%);background-color: #007bffc7;border-color: #007bffc7;">
                             <a href="/login" style="text-decoration: none;color: white;">Login</a>
                         </button> 
                     </div>
                     <% } %>    
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4 col-lg-4 bgimg-2" style="height: 30rem;">
+            <div class="col-sm-12 col-md-4 col-lg-4 bgimg-1" style="">
                 
             </div>
         </div>
