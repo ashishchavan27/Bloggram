@@ -15,7 +15,7 @@ a:hover{
 body{
     padding-top: 50px;
     height: 100%;
-    margin: 0;
+    margin: 2rem 0 0;
     font-family: 'PT Sans', sans-serif;
     color: #777;
     background-color: none;
@@ -198,7 +198,7 @@ button:hover, a:hover {
     display: block;
 }
 .footer-links a {
-    color: black;
+    color: #ffffff80;
 }
 .login-form {
     max-width: 80%;
@@ -261,7 +261,7 @@ p{
     line-height: 24px;
     color: var(--dark);
     text-align: center;
-    background-color: var(--gray);
+    background-color: #15151e;
     color: #000000;
     margin-top: 2rem;
 }
