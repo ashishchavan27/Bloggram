@@ -14,11 +14,12 @@
     </button>
     <div  class="collapse navbar-collapse" id="navbarSupportedContent" >
         <ul class="navbar-nav mr-auto" >
-            <% if (!isAuthenticated) { %>
             
             <li class= "nav-item  ">
                 <a  style="<%= path === '/' ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/">Home</a>
             </li>
+            <% if (!isAuthenticated) { %>
+            
             <% }else{ %>
             <li class="nav-item ">
                 <a  style = "<%= path === '/feed' ? 'color: var(--light);background-color: #007bffc7;border-radius: 6px;box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);' : 'color: #343a40;' %>"  class="nav-link "  href="/feed">Feed</a>
