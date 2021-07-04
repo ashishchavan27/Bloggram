@@ -45,6 +45,7 @@
                 <a style="display: none;" id="search-submit">search</a>
             </div>
         <%}%>
+        
         <ul class="navbar-nav ml-auto" >
             <% if (!isAuthenticated) { %>
                 <li class="nav-item ">
@@ -71,7 +72,7 @@
     
 </nav>
 <script>
-    
+        
         document.getElementById('txtSearch').addEventListener('keypress', searchKeyPress);
 
         function searchKeyPress(e) {
@@ -85,9 +86,9 @@
             return true;
         }
 
+        
         document.getElementById('search-submit').addEventListener('click', redirect);
         
-        // // redirect function
         function redirect() {
             //look for search id
             var result = document.getElementById("txtSearch").value;
@@ -96,7 +97,6 @@
             //redirect page
             // alert('Search Icon Clicked')
             window.location.href = "https://bloggers-ac27.herokuapp.com/search/user/" + result ;
-
         }
         document.getElementById('icon').addEventListener('click', icon);
         

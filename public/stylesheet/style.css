@@ -209,7 +209,7 @@ button:hover, a:hover {
     font-size: 1.6rem;
     /*font-family: 'Merriweather', serif; */
     font-family: 'PT Sans', sans-serif;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 /* Control the left side */
 .left {
@@ -393,7 +393,7 @@ input:focus, textarea:focus, select:focus{
     .create-form{
         margin:  2% 20% 5%;
     }.login-form{
-        width: 30%;
+        width: 50%;
     }
 }
 
