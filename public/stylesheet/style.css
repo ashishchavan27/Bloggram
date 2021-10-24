@@ -15,7 +15,7 @@ a:hover{
 body{
     padding-top: 50px;
     height: 100%;
-    margin: 0;
+    margin: 2rem 0 0;
     font-family: 'PT Sans', sans-serif;
     color: #777;
     background-color: none;
@@ -80,8 +80,8 @@ body{
 }
 .bgimg-1 {
     background-image: url("bg9.jpg");
-    height: 100%;
-
+    height: 395px;
+    margin: 12% 5% 2%;
 }
 .bgimg-2 {
     background-image: url("bg10.jpg");
@@ -118,8 +118,8 @@ body{
     font-weight: 700;
 }
 .coffee{
-    margin-top: 10%;
-    font-size: 32px;
+    margin-top: 5%;
+    font-size: 28px;
     letter-spacing: 1px;
     color: #302927;
     /*font-family: 'Merriweather', serif; */
@@ -198,7 +198,7 @@ button:hover, a:hover {
     display: block;
 }
 .footer-links a {
-    color: black;
+    color: #ffffff80;
 }
 .login-form {
     max-width: 80%;
@@ -209,7 +209,7 @@ button:hover, a:hover {
     font-size: 1.6rem;
     /*font-family: 'Merriweather', serif; */
     font-family: 'PT Sans', sans-serif;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 /* Control the left side */
 .left {
@@ -236,7 +236,7 @@ button:hover, a:hover {
 
 .heading{
     text-align: center;
-    margin: 5% 20px 20px;
+    margin: 2% 20px 20px;
     /*font-family: 'Merriweather', serif; */
     font-family: 'PT Sans', sans-serif;
     font-size: 5rem;
@@ -261,9 +261,9 @@ p{
     line-height: 24px;
     color: var(--dark);
     text-align: center;
-    background-color: var(--gray);
+    background-color: #15151e;
     color: #000000;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 .searchBar , .searchBar:hover{
     background: #fff;
@@ -393,7 +393,7 @@ input:focus, textarea:focus, select:focus{
     .create-form{
         margin:  2% 20% 5%;
     }.login-form{
-        width: 30%;
+        width: 50%;
     }
 }
 
@@ -409,10 +409,17 @@ input:focus, textarea:focus, select:focus{
         box-shadow: none;
         margin-top: 4rem;
     }
+    .bgimg-1{
+        height: 275px;
+        margin: 20% 5% 2%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-    
+    .bgimg-1{
+        height: 305px;
+        margin: 12% 5% 2%;
+    }
     .bgimg-2{
         display: none;
     }

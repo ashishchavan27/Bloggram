@@ -1,38 +1,60 @@
 <%- include('./includes/head.ejs') %>
 <%- include('./includes/nav.ejs') %>
 
-<body style="    background-color: var(--light);">
-    
+<body style="    background-color: var(--light); margin-top: 2rem;">
     <%- messages()%>
+
     <div class="container-fluid"> 
         <div class="row"  style="margin-right: 0;margin-left: 0;">
             <div class="col-sm-12 col-md-12 col-lg-12" >
-                
                 <form class="login-form" action="/login" method="POST">
-                    <h1 class="col-12">Login</h1>
                     <div class="form-group col-12">
-                        <label for="email">Email address:</label>
-                        <input type="email" name="email" class="form-control" placeholder="Enter email" id="email" value="<% if (editing) { %><%= email%><% } %>">
+                    
+                        <h1 class="col-12">Login :</h1>
                     </div>
                     <div class="form-group col-12">
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter password" id="password" value="<% if (editing) { %><%= password %><% } %>">
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" id="email" value="<% if (editing) { %><%= email%><% } %>">
+                        </div>
+                        <!-- <label for="email">Email address:</label> -->
+                        <!-- <input type="email" name="email" class="form-control" placeholder="Enter email" id="email" value="<% if (editing) { %><%= email%><% } %>"> -->
                     </div>
-
-                    <div class="input-group col-lg-12 mb-4">
-                        <button style="width: 100%;" class=" btn btn-primary" type="submit">
-                            Login
-                        </button>
+                    
+                    <div class="form-group col-12">
+                        <!-- Password -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="password" name="password" class="form-control" placeholder="Enter password" id="password" value="<% if (editing) { %><%= password %><% } %>">
+                        </div>
+                        <!-- <label for="password">Password:</label> -->
+                    </div>
+                    <div class="form-group col-12">
+                        <div class="input-group col-lg-12 mb-4">
+                            <button style="width: 100%;" class=" btn btn-primary" type="submit">
+                                Login
+                            </button>
+                        </div>
+                        
                     </div>
                     <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                    <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                    <!-- <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
                         <div class="border-bottom w-100 ml-5"></div>
                         <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
                         <div class="border-bottom w-100 mr-5"></div>
                     </div>
-    
+     -->
                     <!-- Social Login -->
-                    <div class="form-group col-lg-12 mx-auto">
+                    <!-- <div class="form-group col-lg-12 mx-auto">
                         <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
                             <i class="fa fa-facebook-f mr-2"></i>
                             <span class="font-weight-bold">Continue with Facebook</span>
@@ -42,7 +64,7 @@
                             <span class="font-weight-bold">Continue with Twitter</span>
                         </a>
                     </div>
-    
+     -->
                     <!-- Already Registered -->
                     <div class="text-center w-100">
                         <p class="text-muted font-weight-bold">Don't have an account? <a href="/register" class="text-primary ml-2">Register</a></p>
