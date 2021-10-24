@@ -1,8 +1,0 @@
-{
-    "env": {
-        "MONGO_USER":"ashish",
-        "NODE_ENV":"production",
-        "MONGO_PASSWORD":"Ashish@123",
-        "MONGO_DEFAULT_DATABASE":"bloggers"
-    }
-}
