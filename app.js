@@ -13,7 +13,6 @@ var expressValidator = require('express-validator');
 var helmet= require('helmet');
 var compression= require('compression');
 
-
 var mongo = require('mongodb');
 const mongoose = require('mongoose');// to save data
 const MongoDBStore = require('connect-mongodb-session')(session);//connecting and storing sessions with cookies
@@ -59,8 +58,8 @@ var registerRoutes = require('./routes/register');
 var feedRoutes = require('./routes/feed');
 var searchRoutes = require('./routes/search');
 
-console.log(MONGODB_URI);
-console.log(process.env.NODE_ENV);
+// console.log(MONGODB_URI);
+// console.log(process.env.NODE_ENV);
 
 
 var app= express();
@@ -104,9 +103,6 @@ app.use(function (req, res, next) {
   next();
 });
 
-const privateKey=fs.readFileSync('server.key');
-const certificate=fs.readFileSync('server.cert');
-
 
 app.use(expressValidator({
     errorFormatter: function(param, msg, value) {
@@ -138,7 +134,7 @@ app.use((req, res, next) => {
   users.findById(req.session.user._id)
     .then(user => {
       req.user = user;
-      console.log(req.user);
+      // console.log(req.user);
       next();
     })
     .catch(err => console.log(err));
