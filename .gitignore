@@ -1,4 +1,4 @@
-node_modulus/
+node_modules/
 .env
 credentials.json
 
