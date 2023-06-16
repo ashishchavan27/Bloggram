@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var fs = require('fs');
@@ -21,7 +22,7 @@ const users = require('./models/users');
 
 const MONGODB_URI =
   `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.u4kt0.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
-  
+console.log(MONGODB_URI);
 const store = new MongoDBStore({
   uri: MONGODB_URI,
   collection: 'sessions'
